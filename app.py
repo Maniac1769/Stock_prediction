@@ -22,12 +22,11 @@ with open('svr_model.pkl', 'rb') as file:
 
 def predict_stock_price(model, df, future_days):
     # Extract the last row of the dataframe for the present day
-    present_day = df.drop(['Prediction', 'Date'], 1)
-    present_day=np.array(present_day.tail(1))
+    present_day = df.drop(['Prediction', 'Date'], axis=1).tail(1).values
+    present_day = np.array(present_day)
 
     # Create x days from future
-    x_future = df.drop(['Prediction', 'Date'], 1)
-    x_future=x_future.tail(future_days).values
+    x_future = df.drop(['Prediction', 'Date'], axis=1).tail(future_days).values
     x_future = np.array(x_future)
 
     # Predict
