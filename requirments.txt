@@ -1,0 +1,6 @@
+numpy
+pickle-mixin
+streamlit
+streamlit-option-menu
+scikit-learn
+tensorflow==2.12.0
