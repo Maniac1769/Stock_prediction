@@ -14,6 +14,7 @@ import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
 from datetime import datetime
+import yfinance as yf
 
 # Load the pre-trained SVR model from the pickle file
 with open('svr_model.pkl', 'rb') as file:
