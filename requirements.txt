@@ -6,3 +6,4 @@ scikit-learn
 tensorflow==2.12.0
 matplotlib
 datetime
+yfinance
