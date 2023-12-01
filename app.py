@@ -24,7 +24,7 @@ def get_data_and_train_model(selected_option, future_days):
     future_days = int(future_days)
     df['Prediction'] = df[['Close']].shift(-future_days)
 
-    X = np.array(df.drop(['Prediction', 'Date'], 1))[:-future_days]
+    X = np.array(df.drop(['Prediction', 'Date'], axis=1))[:-future_days]
     y = np.array(df['Prediction'])[:-future_days]
 
     x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
