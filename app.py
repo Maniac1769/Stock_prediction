@@ -22,11 +22,11 @@ with open('svr_model.pkl', 'rb') as file:
 
 def predict_stock_price(model, df, future_days):
     # Extract the last row of the dataframe for the present day
-    present_day = df.drop(['Prediction', 'Date'], axis=1).tail(1).values
+    present_day = df.drop(['Prediction', 'Date']).tail(1).values
     present_day = np.array(present_day)
 
     # Create x days from future
-    x_future = df.drop(['Prediction', 'Date'], axis=1).tail(future_days).values
+    x_future = df.drop(['Prediction', 'Date']).tail(future_days).values
     x_future = np.array(x_future)
 
     # Predict
@@ -75,5 +75,7 @@ def main():
     plt.legend(['Original', 'Predicted'])
     st.pyplot()
 
+if __name__ == '__main__':
+    main()
 if __name__ == '__main__':
     main()
