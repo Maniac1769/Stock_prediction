@@ -55,7 +55,7 @@ predicted_values = np.insert(predicted_values, 0, present_day, axis=0)
 predictions = pd.DataFrame(predicted_values)
 predictions.index += len(df) - 1
 
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(20,20))
 plt.title(selected_option + " Stock Price Prediction")
 plt.xlabel('Days')
 plt.ylabel('Closed Price')
